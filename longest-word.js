@@ -15,3 +15,21 @@ function searchString(strSearch, word, strPos = 0, wordPos = 0) {
 
   return false;
 }
+
+function longestWord(searchStr, wordList) {
+  let result = "";
+
+  wordList.forEach(val => {
+    if (val.length > result.length) {
+      if (searchString(searchStr, val)) {
+        result = val;
+      }
+    }
+  });
+
+  if (result.length > 0) {
+    return result;
+  }
+
+  return null;
+}
